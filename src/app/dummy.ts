@@ -226,7 +226,7 @@ export const dummyData = JSON.parse(`{
 }`)
 
 
-export interface Dummy {
+export interface Planets {
   count:    number;
   next:     string;
   previous: null;
