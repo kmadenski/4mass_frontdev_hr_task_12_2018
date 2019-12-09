@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule  } from '@angular/platform-browser/animations';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material'
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ListComponent } from './list/list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 const routes: Routes = [
   {
@@ -38,7 +40,8 @@ const routes: Routes = [
       MatFormFieldModule,
       MatIconModule,
       MatInputModule,
-
+      MatTableModule,
+      MatPaginatorModule,
       //Angular Flex
       FlexLayoutModule,
 

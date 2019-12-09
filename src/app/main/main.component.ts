@@ -16,6 +16,7 @@ export class MainComponent implements OnInit {
   ngOnInit() {
    this._service.fetchPlanets().subscribe(planets => {
      this.list = planets.results
+     console.log(this.list)
    }) 
   }
 
