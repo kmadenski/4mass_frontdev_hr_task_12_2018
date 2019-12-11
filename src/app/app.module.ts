@@ -11,6 +11,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ListComponent } from './list/list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const routes: Routes = [
   {
@@ -38,6 +41,9 @@ const routes: Routes = [
       MatFormFieldModule,
       MatIconModule,
       MatInputModule,
+      MatTableModule,
+      MatPaginatorModule,
+      MatProgressSpinnerModule,
 
       //Angular Flex
       FlexLayoutModule,

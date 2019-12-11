@@ -1,23 +1,55 @@
-:host{
-  .main-wrapper{
-    width:800px;
-    height: 600px;
-    max-height: 95vh;
-    max-width: 100vw;
-    padding-top:40px;
-    margin:auto;
-    border: 1px solid #696969;
-    border-radius: 5px;
-    .list-container{
-      min-width: 300px;
-      min-height: 300px;
-      border-radius:5px;
-      border: 1px solid #696969;
-    }
-    mat-form-field{
-      max-width: 300px;
+.main-wrapper{
+      width:100%;
+
+  .example-table-container{
+      width: 800px;
+      min-height: 600px;
+      position: relative;
+      border:1px solid rgba(230, 230, 230, 0.568);
+    .mat-elevation-z8{
+      width: 800px;
+
+
+      div{
+
+      }
+      th{
+        height: 80px;
+        font-weight: 500;
+        font-size: 20px;
+        background: rgb(32, 67, 141);
+        color:white;
+      }
+      td{
+        height: 70px;
+        width: 20%;
+
+        }
+        tr{
+          &:nth-child(even){
+            background: rgba(241, 241, 241, 0.788);
+          }
+          &:hover{
+            background: rgba(97, 116, 141, 0.349)
+
+        }
+      }
+
     }
   }
+  .spinner-container{
+    position: absolute;
+    top:30%;
+    left:0;
+    right:0;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+
+  }
 }
+
+
 
