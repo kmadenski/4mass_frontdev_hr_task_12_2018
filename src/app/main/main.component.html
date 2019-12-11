@@ -1,9 +1,27 @@
-<div class="main-wrapper" fxLayout="column" fxLayoutAlign="start center">
-  <mat-form-field appearance="standard" >
-    <input matInput #searchInput type="text" [formControl]="searchForm" (keyup)="onSearchValueChanges(searchInput)"  placeholder="Szukaj">
+<!-- <div class="main-wrapper" fxLayout="column" fxLayoutAlign="start center"> -->
+<div class="main-wrapper">
+  <mat-form-field appearance="standard">
+    <input
+      matInput
+      #searchInput
+      type="text"
+      [formControl]="searchForm"
+      (keyup)="onSearchValueChanges(searchInput)"
+      placeholder="Szukaj"
+    />
     <mat-icon matSuffix svgIcon="search" class="search-icon"></mat-icon>
   </mat-form-field>
 
-    <app-list [planetsList]="list"></app-list>
-    <button mat-stroked-button color="primary">Primary</button>
+  <app-list [planetsList]="list"></app-list>
+  <button
+    mat-flat-button
+    color="primary"
+    (click)="fetchPrev()"
+    *ngIf="previous"
+  >
+    Prev
+  </button>
+  <button mat-flat-button color="primary" (click)="fetchNext()" *ngIf="next">
+    Next
+  </button>
 </div>

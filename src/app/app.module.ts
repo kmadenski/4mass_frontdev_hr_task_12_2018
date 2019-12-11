@@ -3,8 +3,8 @@ import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatIconModule, MatIconRegistry } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
-import { MatListModule } from '@angular/material/list';
-import {MatButtonModule} from '@angular/material/button';
+import { MatListModule } from "@angular/material/list";
+import { MatButtonModule } from "@angular/material/button";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { AppComponent } from "./app.component";
@@ -37,6 +37,7 @@ const routes: Routes = [
     MatInputModule,
     MatListModule,
     MatListModule,
+    MatButtonModule,
 
     //Angular Flex
     FlexLayoutModule,

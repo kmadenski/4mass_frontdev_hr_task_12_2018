@@ -1,8 +1,9 @@
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 body{
   padding:0px;
   margin:0px;
   box-sizing: border-box;
-  // background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(172,139,173,1) 83%, rgba(172,139,173,1) 100%);
+  font-family: 'Montserrat', sans-serif;
+  
 }

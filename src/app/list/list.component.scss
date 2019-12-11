@@ -1,6 +1,9 @@
-:host{
-  .main-wrapper{
-    width:80%;
-    
+:host {
+  .main-wrapper {
+    width: 80%;
+    ul {
+      list-style: none;
+      padding: 0;
+    }
   }
 }
