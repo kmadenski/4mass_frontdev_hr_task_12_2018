@@ -1,7 +1,8 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 /* You can add global styles to this file, and also import other style files */
 body{
   padding:0px;
   margin:0px;
-  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(172,139,173,1) 83%, rgba(172,139,173,1) 100%);
+  box-sizing: border-box;
+  // background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(172,139,173,1) 83%, rgba(172,139,173,1) 100%);
 }

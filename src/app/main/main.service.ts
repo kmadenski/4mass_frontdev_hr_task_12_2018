@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Planet, dummyData } from '../dummy';
+import { Planet, dummyData, Dummy } from '../dummy';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from "rxjs";
 
 interface Item{
   id:string;
@@ -12,13 +13,18 @@ interface Item{
 
 export class MainService {
 
-  public list: Planet[];
+  // public list: Planet[];
 
 constructor(private _httpClient: HttpClient) {
-  this.list = dummyData.results;
-
+  // this.list = dummyData.results;
+}
+getPlanets():Observable<Dummy>{
+  return this._httpClient.get<Dummy>('https://swapi.co/api/planets/')
 }
 
+searchPlanet(name):Observable<Dummy>{
+return this._httpClient.get<Dummy>(`https://swapi.co/api/planets/?search=${name}`)
+}
 
 
 }
