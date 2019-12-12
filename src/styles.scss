@@ -12,3 +12,25 @@ app-list {
   display:flex;
   justify-content: center;
 }
+
+
+
+@media only screen and (max-width: 800px) {
+  app-list {
+    font-size: 14px;
+    width: 600px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  app-list {
+    font-size: 12px;
+    width: 450px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  app-list {
+    font-size: 10px;
+    width: 300px;
+  }
+}
