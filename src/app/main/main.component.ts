@@ -11,15 +11,14 @@ import { Subscription } from 'rxjs';
 })
 export class MainComponent implements OnInit {
   subscription?: Subscription;
-  //public isNext: boolean = true;
-  //public isSecondPage: boolean = false;
+
 
   public paginationCondition: PaginationModel = {
     nextPageFromMainArray: "",
     prvPageFromMainArray: "",
     nextPageFromSearch: "",
     prvPageFromSearch: ""
-    }
+  }
   public showSpinner: boolean = true;
   public isSearch: boolean = false;
   public pageNumber: number = 1;
@@ -29,17 +28,18 @@ export class MainComponent implements OnInit {
   constructor(private _service: MainService) {}
 
 
-    getData(pageNumber: number) {
-      this.showSpinner = true;
+  getData(pageNumber: number) {
+    this.showSpinner = true;
+
     this.subscription = this._service.getPlanet(pageNumber).subscribe(
       (data) => {
-            this.list = data.results;
-            this.showSpinner = false;
+        this.list = data.results;
+        this.showSpinner = false;
         this.paginationCondition.nextPageFromMainArray = data.next;
         this.paginationCondition.prvPageFromMainArray = data.previous;
       },
-        (e) => {
-          this.showSpinner = false;
+      (e) => {
+        this.showSpinner = false;
         console.log(`errro is ${e}`);
       },
       () => {
@@ -49,19 +49,19 @@ export class MainComponent implements OnInit {
 
 
   getDataFromSearch(val, next?) {
-      this.isSearch = true;
-      this.showSpinner = false;
+    this.isSearch = true;
+    this.showSpinner = true;
     this.subscription.unsubscribe();
     this.subscription = this._service.searchPlanet(val, next).subscribe(
       (data) => {
-            this.list = data.results;
-            this.showSpinner = false;
+        this.list = data.results;
+        this.showSpinner = false;
         this.paginationCondition.nextPageFromSearch = data.next;
         this.paginationCondition.prvPageFromSearch = data.previous;
       },
-        (e) => {
-          this.showSpinner = false;
-         console.log(`errro is ${e}`)
+      (e) => {
+        this.showSpinner = false;
+        console.log(`errro is ${e}`);
       },
       () => {}
     );
@@ -81,7 +81,7 @@ export class MainComponent implements OnInit {
     if (event === "previous") this.getDataFromSearch('', this.paginationCondition.prvPageFromSearch);
 
   }
-
+    
 
   ngOnInit() {
     this.getData(this.pageNumber);

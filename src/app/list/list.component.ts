@@ -7,7 +7,8 @@ import { Planet, PaginationModel } from '../dummy';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  public pageNumber: number = 1;
+    public pageNumber: number = 1;
+    
 
 
   @Input()
@@ -28,7 +29,7 @@ export class ListComponent implements OnInit {
   }
 
   clickLeft() {
-    console.log(this.paginationCondition.prvPageFromMainArray)
+ 
     if (this.paginationCondition.prvPageFromMainArray) {
       this.pageNumber -= 1;
       this.changed.next(this.pageNumber);
@@ -51,7 +52,8 @@ export class ListComponent implements OnInit {
   }
 
 
-  ngOnInit() {
+    ngOnInit() {
+    
 
   }
 
