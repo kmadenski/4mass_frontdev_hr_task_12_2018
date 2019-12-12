@@ -4,7 +4,12 @@
     <mat-icon matSuffix svgIcon="search" class="search-icon" ></mat-icon>
   </mat-form-field>
 
-    <app-list [planetsList]="list"></app-list>
+  <app-list [paginationCondition]="paginationCondition" [planetsList]="list"
+            [isSearch]="isSearch"
+            [showSpinner]="showSpinner"
+            (nextPage)="nextPage($event)"
+            (changed)="pageChanged($event)"></app-list>
+
 
 
 </div>

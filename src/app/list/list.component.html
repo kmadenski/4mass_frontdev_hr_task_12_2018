@@ -1,9 +1,27 @@
 <div class="main-wrapper">
-  <div *ngFor="let item of planetsList" fxLayout="row" fxLayoutGap="10px">
-     <div>{{item.name}}</div>
-     <div>{{item.climate}}</div>
-     <div>{{item.terrain}}</div>
-     <div>{{item.diameter}}</div>
-     <div>{{item.gravity}}</div>
+  <div *ngIf="showSpinner"  class="spinner_overlay">
+    <div class="spinner"></div>
+  </div>
+  <div class="list_header list_row" fxLayout="row" fxLayoutGap="10px">
+    <div>name</div>
+    <div>climate</div>
+    <div>terrain</div>
+    <div>diameter</div>
+    <div>gravity</div>
+  </div>
+
+  <div class="list_row" *ngFor="let item of planetsList" fxLayout="row" fxLayoutGap="10px">
+    <div class="list_item">{{item.name}}</div>
+    <div>{{item.climate | titlecase }}</div>
+    <div>{{item.terrain}}</div>
+    <div>{{item.diameter}}</div>
+    <div>{{item.gravity}}</div>
+  </div>
+  <div *ngIf="planetsList.length !== 0" class="arrow_wraper">
+    <button *ngIf="this.paginationCondition.prvPageFromMainArray && !isSearch" (click)="clickLeft()" class="left_btn"></button>
+    <button *ngIf="this.paginationCondition.nextPageFromMainArray && !isSearch" (click)="clickRight()" class="right_btn"></button>
+    <button *ngIf="this.paginationCondition.prvPageFromSearch" (click)="prvResult()" class="left_btn"></button>
+    <button *ngIf="this.paginationCondition.nextPageFromSearch" (click)="nextResult()" class="right_btn"></button>
+
   </div>
 </div>
