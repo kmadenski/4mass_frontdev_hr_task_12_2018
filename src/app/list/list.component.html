@@ -1,9 +1,44 @@
-<div class="main-wrapper">
-  <div *ngFor="let item of planetsList" fxLayout="row" fxLayoutGap="10px">
-     <div>{{item.name}}</div>
-     <div>{{item.climate}}</div>
-     <div>{{item.terrain}}</div>
-     <div>{{item.diameter}}</div>
-     <div>{{item.gravity}}</div>
+<div>
+  <mat-spinner *ngIf="!dataSource" class="u-mt-mid"></mat-spinner>
+
+  <div class="mat-elevation-z8" [hidden]="!dataSource">
+    <table mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="climate">
+        <th mat-header-cell *matHeaderCellDef class="mobile-label">Climate</th>
+        <td mat-cell *matCellDef="let element">{{ element.climate }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="terrain">
+        <th mat-header-cell *matHeaderCellDef class="mobile-label">Terrain</th>
+        <td mat-cell *matCellDef="let element">{{ element.terrain }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="diameter">
+        <th mat-header-cell *matHeaderCellDef class="mobile-label">Diameter</th>
+        <td mat-cell *matCellDef="let element">{{ element.diameter }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="gravity">
+        <th mat-header-cell *matHeaderCellDef class="mobile-label">Gravity</th>
+        <td mat-cell *matCellDef="let element">{{ element.gravity }}</td>
+      </ng-container>
+
+      <tr
+        mat-header-row
+        *matHeaderRowDef="displayedColumns"
+        class="mat-header-row"
+      ></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+    ></mat-paginator>
   </div>
 </div>
