@@ -9,10 +9,10 @@ import { Router } from "@angular/router";
 })
 export class ListComponent implements OnInit {
   @Input() planetsList: Planet[] = [];
-  constructor(private router: Router) {}
+  constructor(private _router: Router) {}
 
   ngOnInit() {}
-  onSelect(planet) {
-    this.router.navigate(["/planet", planet.name]);
+  onSelect(planet: any) {
+    this._router.navigate(["/planet", planet.name]);
   }
 }

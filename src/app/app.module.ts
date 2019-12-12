@@ -16,6 +16,7 @@ import { ListComponent } from "./list/list.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HeaderComponent } from "./header/header.component";
 import { ListItemComponent } from "./list-item/list-item.component";
+import { LogoComponent } from './svg/logo/logo.component';
 
 const routes: Routes = [
   {
@@ -37,7 +38,8 @@ const routes: Routes = [
     MainComponent,
     ListComponent,
     HeaderComponent,
-    ListItemComponent
+    ListItemComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,5 @@
 <ul>
   <li *ngFor="let item of planetsList">
-    <!-- < role="listitem" *ngFor="let item of planetsList" fxLayout="row" fxLayoutGap="10px" > -->
     <button mat-stroked-button color="primary" (click)="onSelect(item)">
       {{ item.name }}
     </button>

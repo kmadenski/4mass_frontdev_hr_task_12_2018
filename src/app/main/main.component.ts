@@ -19,7 +19,6 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this._service.getPlanets().subscribe(
       data => {
-        console.log(data);
         this.list = data.results;
         this.next = data.next;
         this.previous = data.previous;

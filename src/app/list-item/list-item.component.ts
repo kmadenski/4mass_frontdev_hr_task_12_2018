@@ -13,13 +13,13 @@ export class ListItemComponent implements OnInit {
   public planetName: string;
   public planet: Planet[] = [];
   constructor(
-    private route: ActivatedRoute,
+    private _route: ActivatedRoute,
     private _service: MainService,
     private _router: Router
   ) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe((params: ParamMap) => {
+    this._route.paramMap.subscribe((params: ParamMap) => {
       let name = params.get("name");
       this.planetName = name;
     });
@@ -27,7 +27,6 @@ export class ListItemComponent implements OnInit {
       data => {
         this.planet = data.results;
         this.spinner = false;
-        console.log(this.planet[0]);
       },
       error => console.log(error)
     );

@@ -1,7 +1,20 @@
 @import "../variables.scss";
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   color: $light-color;
   background: $primary-color;
+  align-items: center;
+}
+@media (max-width: $mobile-small) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+  }
+  h1 {
+    margin: 0;
+  }
+  app-logo {
+    margin-top: 5px;
+  }
 }

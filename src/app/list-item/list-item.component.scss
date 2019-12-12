@@ -11,8 +11,6 @@ h1 {
   justify-content: flex-start;
 }
 .flex__right {
-  // border-left: 1px solid $primary-color;
-  // padding-left: 30px;
   position: relative;
   &::before {
     content: "";
@@ -31,4 +29,16 @@ button {
 }
 mat-icon {
   display: block;
+}
+@media (max-width: $mobile) {
+  .flex {
+    flex-direction: column;
+  }
+
+  .flex__right {
+    &::before {
+      content: "";
+      display: none;
+    }
+  }
 }
