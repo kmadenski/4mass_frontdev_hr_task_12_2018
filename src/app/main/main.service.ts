@@ -1,24 +1,20 @@
-import { Injectable } from '@angular/core';
-import { Planet, dummyData } from '../dummy';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpResponse } from "@angular/common/http";
+import { Observable } from "rxjs";
 
-interface Item{
-  id:string;
+interface Item {
+  id: string;
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
-
 export class MainService {
+  public list: any[];
+  private url: string = "https://swapi.co/api/planets/";
+  constructor(private _httpClient: HttpClient) {}
 
-  public list: Planet[];
-
-constructor(private _httpClient: HttpClient) {
-  this.list = dummyData.results;
-
-}
-
-
-
+  fetchPlanets(): Observable<any> {
+    return this._httpClient.get(this.url);
+  }
 }
