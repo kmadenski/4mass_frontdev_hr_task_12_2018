@@ -22,3 +22,28 @@
     }
   }
 }
+@media only screen and (max-width: 800px) {
+  :host {
+    .main-wrapper {
+      width: 700px;
+    }
+    }
+  }
+
+@media only screen and (max-width: 600px) {
+  :host {
+  .main-wrapper {
+    
+    width: 500px;
+  }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  :host {
+  .main-wrapper {
+    
+    width: 350px;
+  }
+  }
+}
