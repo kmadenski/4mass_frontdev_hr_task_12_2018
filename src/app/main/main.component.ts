@@ -32,15 +32,13 @@ export class MainComponent implements OnInit {
     this.showSpinner = true;
 
     this.subscription = this._service.getPlanet(pageNumber).subscribe(
-      (data) => {
-        this.list = data.results;
-        this.showSpinner = false;
+        (data) => {
+          this.handelSuccessResponse(data);
         this.paginationCondition.nextPageFromMainArray = data.next;
         this.paginationCondition.prvPageFromMainArray = data.previous;
       },
       (e) => {
-        this.showSpinner = false;
-        console.log(`errro is ${e}`);
+       this.handelErrorResponse(e);
       },
       () => {
       }
@@ -54,14 +52,12 @@ export class MainComponent implements OnInit {
     this.subscription.unsubscribe();
     this.subscription = this._service.searchPlanet(val, next).subscribe(
       (data) => {
-        this.list = data.results;
-        this.showSpinner = false;
+        this.handelSuccessResponse(data);
         this.paginationCondition.nextPageFromSearch = data.next;
         this.paginationCondition.prvPageFromSearch = data.previous;
       },
       (e) => {
-        this.showSpinner = false;
-        console.log(`errro is ${e}`);
+        this.handelErrorResponse(e);
       },
       () => {}
     );
@@ -81,7 +77,14 @@ export class MainComponent implements OnInit {
     if (event === "previous") this.getDataFromSearch('', this.paginationCondition.prvPageFromSearch);
 
   }
-    
+    handelSuccessResponse(data) {
+      this.list = data.results;
+      this.showSpinner = false;
+    }
+    handelErrorResponse(error) {
+      this.showSpinner = false;
+      console.log(`errro is ${error}`);
+    }
 
   ngOnInit() {
     this.getData(this.pageNumber);
