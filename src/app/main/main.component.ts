@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MainService } from "./main.service";
-import { Planet } from "../dummy";
+import { Planet } from "../model";
 import { FormControl } from "@angular/forms";
 
 @Component({
@@ -9,6 +9,7 @@ import { FormControl } from "@angular/forms";
   styleUrls: ["./main.component.scss"]
 })
 export class MainComponent implements OnInit {
+  public spinner: boolean = true;
   public list: Planet[] = [];
   public next: any;
   public previous: any;
@@ -16,13 +17,13 @@ export class MainComponent implements OnInit {
   constructor(private _service: MainService) {}
 
   ngOnInit() {
-    //  this.list = this._service.list;
     this._service.getPlanets().subscribe(
       data => {
         console.log(data);
         this.list = data.results;
         this.next = data.next;
         this.previous = data.previous;
+        this.spinner = false;
       },
       error => console.log(error)
     );

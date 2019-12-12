@@ -1,17 +1,17 @@
 <!-- <div class="main-wrapper" fxLayout="column" fxLayoutAlign="start center"> -->
 <div class="main-wrapper">
-  <mat-form-field appearance="standard">
+  <mat-form-field>
     <input
       matInput
       #searchInput
       type="text"
       [formControl]="searchForm"
       (keyup)="onSearchValueChanges(searchInput)"
-      placeholder="Szukaj"
+      placeholder="Serch for planet"
     />
     <mat-icon matSuffix svgIcon="search" class="search-icon"></mat-icon>
   </mat-form-field>
-
+  <mat-spinner [diameter]="50" *ngIf="spinner"></mat-spinner>
   <app-list [planetsList]="list"></app-list>
   <button
     mat-flat-button

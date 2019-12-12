@@ -1,0 +1,34 @@
+@import "../variables.scss";
+h1 {
+  color: $primary-color;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex__icon {
+  justify-content: flex-start;
+}
+.flex__right {
+  // border-left: 1px solid $primary-color;
+  // padding-left: 30px;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 90%;
+    top: 5%;
+    left: -50px;
+    position: absolute;
+    background: $primary-color;
+  }
+}
+button {
+  display: block;
+  margin: 20px auto;
+}
+mat-icon {
+  display: block;
+}

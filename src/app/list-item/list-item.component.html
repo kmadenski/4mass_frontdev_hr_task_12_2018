@@ -1,0 +1,45 @@
+<div class="main-wrapper">
+  <mat-spinner [diameter]="50" *ngIf="spinner; else elseBlock"></mat-spinner>
+  <ng-template #elseBlock>
+    <div class="flex">
+      <h1>{{ planet[0]?.name }}</h1>
+      <div class="flex__right">
+        <div class="flex flex__icon">
+          <mat-icon color="primary">terrain</mat-icon>
+          <p>Terrain: {{ planet[0]?.terrain }}</p>
+        </div>
+        <div class="flex flex__icon">
+          <mat-icon color="primary">wb_sunny</mat-icon>
+          <p>Climate: {{ planet[0]?.climate }}</p>
+        </div>
+        <div class="flex flex__icon">
+          <mat-icon color="primary">trip_origin</mat-icon>
+          <p>Diameter: {{ planet[0]?.diameter }}</p>
+        </div>
+        <div class="flex flex__icon">
+          <mat-icon color="primary">arrow_downward</mat-icon>
+          <p>Gravity: {{ planet[0]?.gravity }}</p>
+        </div>
+        <div class="flex flex__icon">
+          <mat-icon color="primary">replay</mat-icon>
+          <p>Orbital period: {{ planet[0]?.orbital_period }}</p>
+        </div>
+        <div class="flex flex__icon">
+          <mat-icon color="primary">loop</mat-icon>
+          <p>Rotation period: {{ planet[0]?.rotation_period }}</p>
+        </div>
+        <div class="flex flex__icon">
+          <mat-icon color="primary">accessibility_new</mat-icon>
+          <p>Population: {{ planet[0]?.population }}</p>
+        </div>
+        <div class="flex flex__icon">
+          <mat-icon color="primary">local_drink</mat-icon>
+          <p>Surface water: {{ planet[0]?.surface_water }}</p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <button mat-flat-button color="primary" (click)="goBack()">
+    Back
+  </button>
+</div>

@@ -1,9 +1,18 @@
-:host {
-  .main-wrapper {
-    width: 80%;
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-  }
+// :host {
+// .main-wrapper {
+// width: 100%;
+ul {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  // justify-content: space-around;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  width: 100%;
 }
+li {
+  margin: 5px;
+}
+// }
+// }
