@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from './main.service';
-import { Planet } from '../dummy';
+import { Planet, dummyData } from '../dummy';
 import { FormControl } from '@angular/forms';
+import { myapiService } from '../services/myapi.service';
+import {Planets} from '../planets';
 
 @Component({
   selector: 'app-main',
@@ -9,17 +11,20 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+ 
   public list:Planet[] = [];
-  public searchForm:FormControl = new FormControl("")
-  constructor(private _service: MainService) { }
+  public searchForm:FormControl = new FormControl("");
+  
+  constructor(private _service: MainService) {
+  
+   }
 
   ngOnInit() {
    this.list = this._service.list;
-   
   }
 
   onSearchValueChanges(inputElement:HTMLInputElement){
 
   }
-
+  
 }
