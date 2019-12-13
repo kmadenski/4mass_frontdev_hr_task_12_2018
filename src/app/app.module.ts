@@ -16,7 +16,8 @@ import { ListComponent } from "./list/list.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HeaderComponent } from "./header/header.component";
 import { ListItemComponent } from "./list-item/list-item.component";
-import { LogoComponent } from './svg/logo/logo.component';
+import { LogoComponent } from "./svg/logo/logo.component";
+import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 
 const routes: Routes = [
   {
@@ -60,7 +61,7 @@ const routes: Routes = [
 
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
