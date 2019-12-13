@@ -38,7 +38,6 @@ const routes: Routes = [
       MatFormFieldModule,
       MatIconModule,
       MatInputModule,
-
       //Angular Flex
       FlexLayoutModule,
 

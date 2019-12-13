@@ -1,10 +1,18 @@
-<div class="main-wrapper" fxLayout="column" fxLayoutAlign="start center">
-  <mat-form-field appearance="standard" >
-    <input matInput #searchInput type="text" [formControl]="searchForm" (keyup)="onSearchValueChanges(searchInput)"  placeholder="Szukaj">
-    <mat-icon matSuffix svgIcon="search" class="search-icon" ></mat-icon>
-  </mat-form-field>
-
-    <app-list [planetsList]="list"></app-list>
-
-
+<div class="main-wrapper">
+    <div class="main-header">Planets of Star Wars
+    </div>
+    
+    <div class="search-wrapper" fxLayout="column" fxLayoutAlign="start center">
+      <mat-form-field appearance="standard" >
+        <input matInput #searchInput 
+              type="search"
+              class="form-control"
+              [formControl]="searchForm" 
+              (keyup)="onSearchValueChanges(term)"  
+              placeholder="search the planet...">
+        <mat-icon matSuffix svgIcon="search" class="search-icon" ></mat-icon>
+      </mat-form-field>
+      
+      <app-list class="list-wrapper" [planetsList]="list"></app-list>
+    </div>
 </div>

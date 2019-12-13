@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Planet } from '../dummy';
+import {AfterViewInit, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-list',
@@ -7,10 +7,9 @@ import { Planet } from '../dummy';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-@Input() planetsList: Planet[] = [];
+@Input() planetsList = [];
   constructor() { }
 
   ngOnInit() {
   }
-
 }

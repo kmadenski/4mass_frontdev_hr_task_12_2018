@@ -1,5 +1,32 @@
 :host{
-  .main-wrapper{
+  .list-wrapper{
     width:80%;
+    font-size: 2.2vh;
+    table{
+      width: 100%;
+    }
+    th{
+      color: #3a394a;
+    }
+    .name{
+      font-weight: bold;
+    }
+    td{
+      color: #473267;
+      text-align: center;
+    }
+  }
+  @media (min-width: 768px){
+    .list-wrapper{
+      margin: 0 auto;
+      font-size: unset;
+    }
+  }
+  @media (min-width: 996px){
+    .list-wrapper{
+      .headers{
+        font-size: large;
+      }
+    }
   }
 }

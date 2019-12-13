@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Planet, dummyData } from '../dummy';
 import { HttpClient } from '@angular/common/http';
+import { getLocaleDateFormat } from '@angular/common';
 
 interface Item{
   id:string;
@@ -12,13 +12,11 @@ interface Item{
 
 export class MainService {
 
-  public list: Planet[];
 
-constructor(private _httpClient: HttpClient) {
-  this.list = dummyData.results;
-
+constructor(private http: HttpClient) {
 }
 
-
-
+  getData(){
+    return this.http.get('https://swapi.co/api/planets/');
+  }
 }

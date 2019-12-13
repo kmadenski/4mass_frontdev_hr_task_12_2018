@@ -1,9 +1,18 @@
-<div class="main-wrapper">
-  <div *ngFor="let item of planetsList" fxLayout="row" fxLayoutGap="10px">
-     <div>{{item.name}}</div>
-     <div>{{item.climate}}</div>
-     <div>{{item.terrain}}</div>
-     <div>{{item.diameter}}</div>
-     <div>{{item.gravity}}</div>
-  </div>
+<div class="list-wrapper">
+  <table>
+    <tr class="headers">
+      <th>Name</th>
+      <th>Climate</th>
+      <th>Terrain</th>
+      <th>Diameter</th>
+      <th>Gravity</th>
+    </tr>
+    <tr *ngFor="let item of planetsList">
+      <td class="name">{{item.name}}</td>
+      <td>{{item.climate}}</td>
+      <td>{{item.terrain}}</td>
+      <td>{{item.diameter}}</td>
+      <td>{{item.gravity}}</td>
+    </tr>
+  </table>
 </div>

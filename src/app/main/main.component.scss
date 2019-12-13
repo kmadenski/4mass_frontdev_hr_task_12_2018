@@ -1,23 +1,34 @@
 :host{
   .main-wrapper{
-    width:800px;
-    height: 600px;
-    max-height: 95vh;
-    max-width: 100vw;
-    padding-top:40px;
-    margin:auto;
-    border: 1px solid #696969;
-    border-radius: 5px;
-    .list-container{
-      min-width: 300px;
-      min-height: 300px;
-      border-radius:5px;
-      border: 1px solid #696969;
+    height: 100vh;
+    .main-header{
+      text-align: center;
+      color: #624242;
+      text-shadow: 2px 2px white;
+      font-size: 5vh;
+      font-family: 'Bungee Shade', cursive;
     }
-    mat-form-field{
-      max-width: 300px;
+    .search-wrapper{
+      width: fit-content;
+      height: fit-content;
+      padding-top: 2%;
+      margin: 5vh auto;
+      border: 3px solid #3a3a3a;
+      background-color: white;
+      border-radius: 5%;
+        mat-form-field{
+          max-width: 300px;
+        }
+        .mat-form-field-infix{
+          width: 30vw;
+        }
+    }
+    .list-wrapper{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
+      margin: 3% auto;
     }
   }
-
 }
-
